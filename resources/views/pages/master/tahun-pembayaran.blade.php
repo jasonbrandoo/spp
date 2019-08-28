@@ -69,7 +69,7 @@
       serverSide: true,
       ajax: '/data-tahun-pelajaran',
       columns: [
-        { data: 'id' },
+        { data: 'id', render: (data, type, row, meta) => meta.settings.iDraw++ },
         { data: 'tahun_pelajaran', render: (data, type, row) => `<a href="/edit-tahun-pelajaran/${row.id}">${row.tahun_pelajaran}</a>` },
         { data: 'id', render: (data, type, row) => `<a href="/delete-tahun-pelajaran/${row.id}"><button class="btn btn-danger">Delete</button></a>` },
       ],

@@ -73,7 +73,7 @@
       serverSide: true,
       ajax: '/data-siswa',
       columns: [
-        { data: 'id' },
+        { data: 'id', render: (data, type, row, meta) => meta.settings.iDraw++ },
         { data: 'kelas.jurusan.jurusan'},
         { data: 'kelas.kelas'},
         { data: 'nis' },

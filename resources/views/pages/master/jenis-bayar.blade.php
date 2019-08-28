@@ -74,7 +74,7 @@
       serverSide: true,
       ajax: '/data-jenis-bayar',
       columns: [
-        { data: 'id' },
+        { data: 'id', render: (data, type, row, meta) => meta.settings.iDraw++ },
         { data: 'id_kelas', render: (data, type, row) => `<a href="/edit-jenis-bayar/${row.id}">${row.kelas.kelas} - ${row.kelas.jurusan.jurusan} - ${row.kelas.tahun.tahun_pelajaran}</a>` },
         { data: 'jumlah' },
         { data: 'id', render: (data, type, row) => `<a href="/delete-jenis-bayar/${row.id}"><button class="btn btn-danger">Delete</button></a>` },

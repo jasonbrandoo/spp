@@ -7,17 +7,13 @@
       <h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Cetak Tagihan</span></h4>
       <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
     </div>
-    <div class="header-elements d-none">
-      <a href="/create-jurusan" class="btn btn-labeled btn-labeled-right bg-blue-400">Add <b><i
-            class="icon-plus-circle2"></i></b></a>
-    </div>
   </div>
 
   <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
     <div class="d-flex">
       <div class="breadcrumb">
         <a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-        <a href="/cetak-tagihan" class="breadcrumb-item">Jurusan</a>
+        <a href="/rekap-pembayaran" class="breadcrumb-item">Rekap Pembayaran</a>
       </div>
 
       <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
@@ -97,6 +93,8 @@
         { data: 'desember', render:(data, type, row) => row.desember === null ? 'Belum bayar' : 'Lunas' },
       ],
     });
+
+    $('.dt-button').addClass('btn btn-primary')
   });
 </script>
 @endpush

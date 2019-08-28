@@ -45,23 +45,23 @@ class PembayaranController extends Controller
       ]
     );
     $siswa = Siswa::with('kelas.jurusan', 'kelas.nominal')->find($request->input('id_siswa'));
-    $basic = new \Nexmo\Client\Credentials\Basic('1b1acd1e', '4TjXiNAljYN3mRKP');
-    $client = new \Nexmo\Client($basic);
-    try {
-      $message = $client->message()->send([
-        'to' => +6281288229019,
-        'from' => 'Acme Inc',
-        'text' => 'A text message sent using the Nexmo SMS API'
-      ]);
-      $response = $message->getResponseData();
-      if ($response['messages'][0]['status'] == 0) {
-        echo "The message was sent successfully\n";
-      } else {
-        echo "The message failed with status: " . $response['messages'][0]['status'] . "\n";
-      }
-    } catch (Exception $e) {
-      echo "The message was not sent. Error: " . $e->getMessage() . "\n";
-    }
+    // $basic = new \Nexmo\Client\Credentials\Basic('', '');
+    // $client = new \Nexmo\Client($basic);
+    // try {
+    //   $message = $client->message()->send([
+    //     'to' => +6281288229019,
+    //     'from' => 'Acme Inc',
+    //     'text' => 'A text message sent using the Nexmo SMS API'
+    //   ]);
+    //   $response = $message->getResponseData();
+    //   if ($response['messages'][0]['status'] == 0) {
+    //     echo "The message was sent successfully\n";
+    //   } else {
+    //     echo "The message failed with status: " . $response['messages'][0]['status'] . "\n";
+    //   }
+    // } catch (Exception $e) {
+    //   echo "The message was not sent. Error: " . $e->getMessage() . "\n";
+    // }
     return view('pages.pembayaran.print', ['siswa' => $siswa]);
   }
 

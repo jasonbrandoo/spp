@@ -70,7 +70,7 @@
       serverSide: true,
       ajax: '/data-jurusan',
       columns: [
-        { data: 'id' },
+        { data: 'id', render: (data, type, row, meta) => meta.settings.iDraw++ },
         { data: 'jurusan', render: (data, type, row) => `<a href="/edit-jurusan/${row.id}">${row.jurusan}</a>` },
         { data: 'kode_jurusan' },
         { data: 'id', render: (data, type, row) => `<a href="/delete-jurusan/${row.id}"><button class="btn btn-danger">Delete</button></a>` },
